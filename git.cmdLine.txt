@@ -1,0 +1,49 @@
+1.先安装 git 程序
+
+2.在git Bash 中执行  ssh-keygen -t rsa
+
+3.在C盘下搜索 id_rsa.pub 文件
+
+4.复制文件中内容
+
+5.将复制的内容copy 到 git账号的SSH 中
+
+6.搭建本地仓库
+
+    6.1 使用clone， 在放置的目录下执行 git clone git@github.com:stormzhang/test.git
+
+    6.2 将本地上传服务器
+        6.2.1 先在git网站创建一个仓库
+        6.2.2 在客户端项目目录下执行 git init
+        6.2.3 在执行git remote add origin git@github.com:stormzhang/test.git 注:origin 是别名，可以自定义，一般用origin
+    
+7.执行 git branch --all 可以看到所有的分支
+
+8.执行 git checkout 分支名  可以切换分支，一般每个人都有专属分支
+
+9.执行 git pull origin 专属分支名  获取分支代码
+
+10.开发
+    10.1 改变一个文件的内容
+    10.2 执行 git status 可以看到待暂存，暂存 文件列表
+    10.3 执行 git diff 可以看到工作区和暂存区的差异。 注：diff 还有其他的命令参数，可以自行百度，或者后期补充
+    10.4 执行 git add . 代表将所有的待暂存文件 暂存 。 注：. 也可以是制定的文件名
+    10.5 执行 git commit -m 'Note' 提交暂存文件，这时文件还是在本地。 注：git commit -a -m 'Note' 是将 10.4 和  10.5 的两个命令合并
+    10.6 执行 git push origin 专属分支名  此时才是将文件提交到对应的分支服务器
+
+
+
+附录：
+
+命令行                              解释
+
+git fetch                       把远程的代码更新到本地库
+git branch -r/-a                查看远程分支/全部分支
+git checkout -b  test           创建test 分支
+git checkout -d  test           删除test 分支
+git merge master                将master 分支内容合并到当前分支
+git merge tool                  调用merge 工具
+git stash                       把未完成的修改缓存到栈容器中 ，//to do 需要完善
+git stash list                  查看所有的缓存
+git reset                       撤销本地的修改
+

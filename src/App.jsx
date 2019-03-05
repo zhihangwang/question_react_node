@@ -20,6 +20,7 @@ const IssueRow = (props) => (
 
 function IssueTable(props) {
 	const issueRows = props.issues.map(issue => <IssueRow key={issue.id} issue={issue} />);
+	console.log('2');
 	return (<table style={{ border: '1px' }}>
 		<thead>
 			<tr>

@@ -47,4 +47,6 @@ git stash                       把未完成的修改缓存到栈容器中 ，//
 git stash list                  查看所有的缓存
 git reset                       撤销本地的修改
 git rm test.txt                 删除test.txt文件
+git mv oldName newName          重命名文件
+git checkout test.txt           将test.txt 恢复成分支内容   
 

@@ -26,77 +26,24 @@
 10.开发
     10.1 改变一个文件的内容
     10.2 执行 git status 可以看到待暂存，暂存 文件列表
-    10.3 执行git 
-    10.3 执行 git add . 代表将所有的待暂存文件 暂存 。 注：. 也可以是制定的文件名
-    10.4 执行 git commit -m 'Note' 提交暂存文件，这时文件还是在本地。 注：git commit -a -m 'Note' 是将 10.2 和  10.4的两个命令合并
-    10.5 执行 git push origin 专属分支名  此时才是将文件提交到对应的分支服务器
+    10.3 执行 git diff 可以看到工作区和暂存区的差异。 注：diff 还有其他的命令参数，可以自行百度，或者后期补充
+    10.4 执行 git add . 代表将所有的待暂存文件 暂存 。 注：. 也可以是制定的文件名
+    10.5 执行 git commit -m 'Note' 提交暂存文件，这时文件还是在本地。 注：git commit -a -m 'Note' 是将 10.4 和  10.5 的两个命令合并
+    10.6 执行 git push origin 专属分支名  此时才是将文件提交到对应的分支服务器
 
 
 
+附录：
 
+命令行                              解释
 
+git fetch                       把远程的代码更新到本地库
+git branch -r/-a                查看远程分支/全部分支
+git checkout -b  test           创建test 分支
+git checkout -d  test           删除test 分支
+git merge master                将master 分支内容合并到当前分支
+git merge tool                  调用merge 工具
+git stash                       把未完成的修改缓存到栈容器中 ，//to do 需要完善
+git stash list                  查看所有的缓存
+git reset                       撤销本地的修改
 
-git push origin master
-
-
-
-
-git init  初始化git 配置
-
-git clone https://...  克隆仓库
-
-git status  检查文件状态
-
-git add  fileName  跟踪文件,用于暂存
-
-.gitignore 用于配置排除不被监控的文件
-示例：
-*.[oa]
-*~
-解释：
-第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。
-第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本
-规则：
-所有空行或者以 ＃ 开头的行都会被 Git 忽略。
-
-可以使用标准的 glob 模式匹配。
-
-匹配模式可以以（/）开头防止递归。
-
-匹配模式可以以（/）结尾指定目录。
-
-要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反
-
-git commit Note 推送到分支
-
-git commit –a Note 可以跳过暂存步骤，直接推送
-
-git rm FileName 移除文件
-
-git mv oldFileName newFileName 重命名文件
-
-git log 查看提交历史，参数可以自己查找，vscode 有扩展
-
-git commit –amend 覆盖上一次提交
-
-git reset FileName 取消暂存
-
-git checkout –FileName 将文件恢复到分支最新内容 （慎用）
-
-git remote 查看远程的仓库
-
-git remote –v 可以显示详细的信息
-
-git remote add 别名 gitUrl   添加远程仓库
-
-git fetch 别名   拉取代码
-
-git push origin master 
-
-git remote rename jason question 重命名别名
-
-git rm 别名   删除远程连接
-
-git branch –a 查看远程分支
-
-git branch 查看本地分支

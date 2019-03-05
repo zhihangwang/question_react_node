@@ -46,4 +46,5 @@ git merge tool                  调用merge 工具
 git stash                       把未完成的修改缓存到栈容器中 ，//to do 需要完善
 git stash list                  查看所有的缓存
 git reset                       撤销本地的修改
+git rm test.txt                 删除test.txt文件
 

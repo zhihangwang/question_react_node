@@ -5,6 +5,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "mongodb": "^3.1.13",
     "nodemon": "^1.18.10",
     "prop-types": "^15.7.2"
   },
@@ -14,8 +15,8 @@
   "scripts": {
     "compile": "babel src --presets react,es2015 --out-dir static",
     "watch": "babel src --presets react,es2015 --out-dir static --watch",
-    "dev": "node service.js",
-    "start": "nodemon -w service.js service.js"
+    "dev": "node service/service.js",
+    "start": "nodemon -w service service/service.js"
   },
   "author": "",
   "license": "ISC",

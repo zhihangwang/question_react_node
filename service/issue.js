@@ -1,4 +1,3 @@
-
 const validIssueStatus = {
     New: true,
     Open: true,
@@ -9,7 +8,6 @@ const validIssueStatus = {
 }
 
 const issueFieldType = {
-    id: 'required',
     status: 'required',
     owner: 'required',
     created: 'required',
@@ -34,6 +32,6 @@ function validateIssue(issue) {
     return null;
 }
 
-module.exports={
-    validateIssue:validateIssue
+module.exports = {
+    validateIssue: validateIssue
 }

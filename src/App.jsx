@@ -8,18 +8,18 @@ class IssueFilter extends React.Component {
 
 const IssueRow = (props) => (
 	<tr>
-		<td >{props.issue.id}</td>
+		<td >{props.issue._id}</td>
 		<td >{props.issue.status}</td>
 		<td >{props.issue.owner}</td>
 		<td >{props.issue.created.toDateString()}</td>
 		<td >{props.issue.effort}</td>
-		<td >{props.issue.completionDate ? issue.completionDate.toDateString() : ''}</td>
+		<td >{props.issue.completionDate ? props.issue.completionDate.toDateString() : ''}</td>
 		<td >{props.issue.title}</td>
 	</tr>
 );
 
 function IssueTable(props) {
-	const issueRows = props.issues.map(issue => <IssueRow key={issue.id} issue={issue} />);	
+	const issueRows = props.issues.map(issue => <IssueRow key={issue._id} issue={issue} />);	
 	return (<table style={{ border: '1px' }}>
 		<thead>
 			<tr>
@@ -88,6 +88,7 @@ class IssueList extends React.Component {
 					issue.completionDate = new Date(issue.completionDate);
 				}
 			});
+			console.log(rawData._records);
 			this.setState({ issues: rawData._records })
 		}).catch((err) => {
 			console.log(err);

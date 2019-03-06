@@ -40,7 +40,7 @@ var IssueRow = function IssueRow(props) {
 		React.createElement(
 			'td',
 			null,
-			props.issue.id
+			props.issue._id
 		),
 		React.createElement(
 			'td',
@@ -65,7 +65,7 @@ var IssueRow = function IssueRow(props) {
 		React.createElement(
 			'td',
 			null,
-			props.issue.completionDate ? issue.completionDate.toDateString() : ''
+			props.issue.completionDate ? props.issue.completionDate.toDateString() : ''
 		),
 		React.createElement(
 			'td',
@@ -77,7 +77,7 @@ var IssueRow = function IssueRow(props) {
 
 function IssueTable(props) {
 	var issueRows = props.issues.map(function (issue) {
-		return React.createElement(IssueRow, { key: issue.id, issue: issue });
+		return React.createElement(IssueRow, { key: issue._id, issue: issue });
 	});
 	return React.createElement(
 		'table',
@@ -216,6 +216,7 @@ var IssueList = function (_React$Component3) {
 						issue.completionDate = new Date(issue.completionDate);
 					}
 				});
+				console.log(rawData._records);
 				_this4.setState({ issues: rawData._records });
 			}).catch(function (err) {
 				console.log(err);

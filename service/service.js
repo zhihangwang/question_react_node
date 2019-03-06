@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-const Issue=require('./issue.js');
+const Issue = require('./issue.js');
 
 let db;
 
@@ -10,7 +10,7 @@ app.use(express.static('static'));
 app.use(bodyParser.json());
 
 app.get('/api/issues', (req, res) => {
-    db.connection('issues').find().toArray().then(issues => {
+    db.collection('issues').find().toArray().then(issues => {
         const metadata = {
             total_count: issues.length
         };
@@ -19,7 +19,6 @@ app.get('/api/issues', (req, res) => {
             _records: issues
         });
     }).catch(err => {
-        console.log(err);
         res.status(500).json({
             message: `Internal Service Error ${err}`
         });
@@ -37,21 +36,21 @@ app.post('/api/issues', (req, res) => {
         return;
     }
 
-    db.connection('issues').insertOne(newIssue).then(rsult => {
-        newIssue._id = rsult._id;
+    db.collection('issues').insertOne(newIssue).then(result => {
+        console.log(result)
+        newIssue._id = result.insertedId;
         res.json(newIssue);
     }).catch(err => {
         console.log(err);
         res.status(500).json({
             message: `Internal Service Error ${err}`
         });
-    });  
+    });
 });
 
-MongoClient.connect('mongodb://localhost/issuetracker').then(connection => {
-    db = connection;
-    app.listen(3000, function () {
-
+MongoClient.connect('mongodb://localhost:27017').then(connection => {
+    db = connection.db('issuetracker');
+    app.listen(3000, function() {
         console.log('start 3000.');
     });
 }).catch((err) => {

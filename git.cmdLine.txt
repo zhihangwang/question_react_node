@@ -37,7 +37,8 @@
 
 命令行                              解释
 
-git fetch                            把远程的代码更新到本地库
+git fetch orgin master               把远程master的代码下载到本地库
+git pull orgin master                把远程master的代码下载到本地库，并merge。注：fetch 更加安全些
 git branch -r/-a                     查看远程分支/全部分支
 git checkout -b  test                创建test 分支
 git checkout -d  test                删除test 分支
@@ -51,4 +52,5 @@ git mv oldName newName               重命名文件
 git checkout test.txt                将test.txt 恢复成分支内容 
 git remote remove origin             删除git源
 git remote set-url origin newGitUrl  更换git源
+
 

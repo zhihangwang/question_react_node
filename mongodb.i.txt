@@ -1,0 +1,32 @@
+1. 打开 https://www.mongodb.com/download-center/community 定位'Service' Tab 页，选择Release 版本号和 OS
+
+2.下载 (安装在C盘)
+    2.1 下载MSI
+        2.1.1 按照平常装软件的方式，安装
+    2.2 下载Zip
+        2.2.1 解压后可以直接使用
+
+3.创建目录用于部署mongodb 例：C:/mongodbData
+
+4.创建目录用于放置数据库 例:C:/mongodbData/db
+
+5.创建目录用于放置日志 例:C:/mongodbData/log
+
+6.在db 目录下创建配置文件 (mongod.cfg)
+    content：
+        systemLog:
+        destination: file
+        path: c:\mongodbData\log\mongod.log
+        storage:
+        dbPath: c:\mongodbData\db
+
+8.执行 C:\mongodb\bin\mongod.exe --config "C:\mongodbData\mongod.cfg" --install 
+
+9.启动Mongodb 服务  net start MongoDB
+
+10.可以开启 mongodb shell模式
+
+10.关闭MongoDB服务  net stop MongoDB
+
+11.移除 MongoDB 服务 C:\mongodb\bin\mongod.exe --remove
+

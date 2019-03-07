@@ -36,7 +36,22 @@
 
 11.可以开启 mongodb shell模式
 
-12.关闭MongoDB服务  net stop MongoDB
+12. show databases 可以查看数据库
 
-13.移除 MongoDB 服务 C:\mongodb\bin\mongod.exe --remove
+13. use 数据库名  可以将db 指向需要看的数据库
+
+14. show collections 可以查看当前db指向数据库的数据表
+
+15.关闭MongoDB服务  net stop MongoDB
+
+16.移除 MongoDB 服务 C:\mongodb\bin\mongod.exe --remove
+
+17.使用 js 执行init 数据库，在安装bin的目录下执行 例： mongod D:\react\question_github\util\init.mongo.js
+    例 content：
+        var conn = new Mongo("localhost:27017");
+        var db = conn.getDB("issuetracker");
+        db.issues.remove({});
+        db.issues.insert([{},{}});
+        db.issues.createIndex({ status: 1 });
+        
 

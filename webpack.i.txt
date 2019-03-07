@@ -1,0 +1,3 @@
+1.cnpm install webpack webpack-cli -g
+
+2.cnpm install webpack webpack-cli --save-dev

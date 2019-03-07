@@ -1,6 +1,7 @@
-import path from 'path';
+const path = require('path');
 
 module.exports = {
+    mode: 'none',
     entry: './src/App.jsx',
     output: {
         path: path.resolve(__dirname, 'static'),
@@ -8,13 +9,12 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
+            test: /\.jsx$/,
             exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env'],
-                    plugins: [require('@babel/plugin-transform-object-rest-spread')]
+                    presets: ['react', 'es2015'],
                 }
             }
         }]

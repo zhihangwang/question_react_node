@@ -1,4 +1,4 @@
-import IssusAdd from './IssueAdd';
+import IssusAdd from './IssueAdd.jsx';
 
 const node = document.getElementById('example');
 

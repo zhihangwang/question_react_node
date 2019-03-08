@@ -9,3 +9,7 @@ ReactDOM.render(
 	<IssueList />,
 	node
 );
+
+if(module.hot){
+	module.hot.accept();
+}

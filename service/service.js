@@ -1,9 +1,16 @@
-const bodyParser = require('body-parser');
-const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
-const Issue = require('./issue.js');
+import bodyParser from 'body-parser';
+import express from 'express';
+import { MongoClient } from 'mongodb';
+import 'babel-polyfill';
+import sourceMapSupport from 'source-map-support';
+import Issue from './issue.js';
 
 let db;
+
+sourceMapSupport.install();
+
+
+
 
 const app = express();
 app.use(express.static('static'));

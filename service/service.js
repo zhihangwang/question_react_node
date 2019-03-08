@@ -44,11 +44,9 @@ app.post('/api/issues', (req, res) => {
     }
 
     db.collection('issues').insertOne(newIssue).then(result => {
-        console.log(result)
         newIssue._id = result.insertedId;
         res.json(newIssue);
     }).catch(err => {
-        console.log(err);
         res.status(500).json({
             message: `Internal Service Error ${err}`
         });

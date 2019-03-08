@@ -69,7 +69,7 @@ app.post('/api/issues', function (req, res) {
     });
 });
 
-_mongodb.MongoClient.connect('mongodb://localhost:27017').then(function (connection) {
+_mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true }).then(function (connection) {
     db = connection.db('issuetracker');
     app.listen(3000, function () {
         console.log('start 3000.');

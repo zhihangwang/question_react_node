@@ -39,7 +39,8 @@
         "buildproduction": "webpack --mode production",
         "oldTwoWatch": "webpack --mode none --watch",
         "watch": "webpack-dev-server --hot --inline",
-        "serverWatch": "babel service --presets es2015-node4 --out-dir dist --watch --source-maps"
+        "serverWatch": "babel service --presets es2015-node4 --out-dir dist --watch --source-maps",
+        "start_hook": "nodemon -w service service/start_hook.js"
     },
     "author": "",
     "license": "ISC",

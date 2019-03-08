@@ -52,5 +52,6 @@ git mv oldName newName               重命名文件
 git checkout test.txt                将test.txt 恢复成分支内容 
 git remote remove origin             删除git源
 git remote set-url origin newGitUrl  更换git源
+git checkout fileName/.              撤销指定文件或者全部文件的修改
 
 

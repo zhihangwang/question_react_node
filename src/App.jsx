@@ -1,15 +1,13 @@
- import react from 'react';
- import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from "react-dom";
 import  IssueList  from "./IssueList.jsx";
+import { hot} from 'react-hot-loader'
 
 const node = document.getElementById('example');
-
 
 ReactDOM.render(
 	<IssueList />,
 	node
 );
 
-if(module.hot){
-	module.hot.accept();
-}
+export default hot(module)(IssueList);

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import 'whatwg-fetch';
 import IssueFilter from "./IssueFilter.jsx";
 import IssueAdd from "./IssueAdd.jsx";
@@ -55,7 +55,6 @@ export default class IssueList extends React.Component {
                     issue.completionDate = new Date(issue.completionDate);
                 }
             });
-            console.log(rawData._records);
             this.setState({ issues: rawData._records })
         }).catch((err) => {
             console.log(err);

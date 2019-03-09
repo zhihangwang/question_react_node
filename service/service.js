@@ -9,9 +9,6 @@ let db;
 
 sourceMapSupport.install();
 
-
-
-
 const app = express();
 app.use(express.static('static'));
 app.use(bodyParser.json());

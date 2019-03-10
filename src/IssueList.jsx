@@ -2,10 +2,11 @@ import React from 'react';
 import 'whatwg-fetch';
 import IssueFilter from "./IssueFilter.jsx";
 import IssueAdd from "./IssueAdd.jsx";
+import {Link} from 'react-router-dom';
 
 const IssueRow = (props) => (
     <tr>
-        <td >{props.issue._id}</td>
+        <td ><Link to={`/issuesDetail/${props.issue._id}`}>{props.issue._id}</Link></td>
         <td >{props.issue.status}</td>
         <td >{props.issue.owner}</td>
         <td >{props.issue.created.toDateString()}</td>

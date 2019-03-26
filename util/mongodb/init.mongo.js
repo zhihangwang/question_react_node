@@ -1,4 +1,5 @@
 var conn = new Mongo("localhost:27017");
+console.log(`eeeeeee`, conn);
 var db = conn.getDB("issuetracker");
 
 db.issues.remove({});

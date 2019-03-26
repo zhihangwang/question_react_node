@@ -12,19 +12,20 @@
 
 5.创建目录用于放置日志 例:C:/mongodbData/dblog
 
-6.创建目录用于放置配置 例:C:/mongodbData/dblog
+6.创建目录用于放置配置 例:C:/mongodbData/config
 
 7.在 C:/mongodbData/config 目录下创建配置文件 (mongod.cfg)
-    systemLog:
-        destination: file
-        path: d:\mongodbData\dblog\mongod.log
-        logAppend: true
-    storage:
-        journal:
-            enabled: true
-    dbPath: d:\mongodbData\db
-    net:
-        port: 27017
+ 
+        systemLog:
+    destination: file
+    path: c:\mongodbData\dblog\mongod.log
+    logAppend: true
+storage:
+    journal:
+        enabled: true
+    dbPath: c:\mongodbData\db
+net:
+    port: 27017
 
 8. 管理员打开cmd
 
@@ -55,3 +56,6 @@
         db.issues.createIndex({ status: 1 });
         
 
+最新的电脑支持SSL 1.0 以上的，Mongodb 4以上的需要配置证书
+TODO:
+I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'   --error 

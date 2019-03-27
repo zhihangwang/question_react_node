@@ -1,0 +1,12 @@
+1.cnpm install webpack@4.15.1 webpack-cli@3.1.1 -g
+
+2.cnpm install webpack@4.15.1 webpack-cli@3.1.1 --save-dev //只为告诉协助者，安装环境的版本
+
+3.cnpm i webpack@4.15.1 webpack-cli@3.1.1 babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 babel-preset-es2015@6.24.1 babel-preset-react@6.24.1 --save-dev 
+
+4.运行 webpack
+
+
+附：
+
+1. babel 与 webpack 有版本兼容问题，建议网上找一个可以使用的版本组合，不要自己去拼

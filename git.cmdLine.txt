@@ -28,7 +28,7 @@
     10.2 执行 git status 可以看到待暂存，暂存 文件列表
     10.3 执行 git diff 可以看到工作区和暂存区的差异。 注：diff 还有其他的命令参数，可以自行百度，或者后期补充
     10.4 执行 git add . 代表将所有的待暂存文件 暂存 。 注：. 也可以是制定的文件名
-    10.5 执行 git commit -m 'Note' 提交暂存文件，这时文件还是在本地。 注：git commit -a -m 'Note' 是将 10.4 和  10.5 的两个命令合并
+    10.5 执行 git commit -m 'Note' 提交暂存文件，这时文件还是在本地。 注：git commit -a -m 'Note' 是将 10.4 和  10.5 的两个命令合并, -a 只针对修改的文件，创建和修改文件，不会被push
     10.6 执行 git push origin 专属分支名  此时才是将文件提交到对应的分支服务器
 
 
@@ -37,7 +37,8 @@
 
 命令行                              解释
 
-git fetch                            把远程的代码更新到本地库
+git fetch orgin master               把远程master的代码下载到本地库
+git pull orgin master                把远程master的代码下载到本地库，并merge。注：fetch 更加安全些
 git branch -r/-a                     查看远程分支/全部分支
 git checkout -b  test                创建test 分支
 git checkout -d  test                删除test 分支
@@ -51,4 +52,6 @@ git mv oldName newName               重命名文件
 git checkout test.txt                将test.txt 恢复成分支内容 
 git remote remove origin             删除git源
 git remote set-url origin newGitUrl  更换git源
+git checkout fileName/.              撤销指定文件或者全部文件的修改
+
 

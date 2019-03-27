@@ -1,0 +1,61 @@
+1. 打开 https://www.mongodb.com/download-center/community 定位'Service' Tab 页，选择Release 版本号和 OS
+
+2.下载 (安装在C盘)
+    2.1 下载MSI
+        2.1.1 按照平常装软件的方式，安装
+    2.2 下载Zip
+        2.2.1 解压后可以直接使用
+
+3.创建目录用于部署mongodb 例：C:/mongodbData
+
+4.创建目录用于放置数据库 例:C:/mongodbData/db
+
+5.创建目录用于放置日志 例:C:/mongodbData/dblog
+
+6.创建目录用于放置配置 例:C:/mongodbData/config
+
+7.在 C:/mongodbData/config 目录下创建配置文件 (mongod.cfg)
+ 
+        systemLog:
+    destination: file
+    path: c:\mongodbData\dblog\mongod.log
+    logAppend: true
+storage:
+    journal:
+        enabled: true
+    dbPath: c:\mongodbData\db
+net:
+    port: 27017
+
+8. 管理员打开cmd
+
+9. 执行 cd C:\mongodb\bin
+
+10. 执行 mongod.exe --config "C:\mongodbData\config\mongod.cfg" --install 
+
+10.启动Mongodb 服务  net start MongoDB
+
+11.可以开启 mongodb shell模式
+
+12. show databases 可以查看数据库
+
+13. use 数据库名  可以将db 指向需要看的数据库
+
+14. show collections 可以查看当前db指向数据库的数据表
+
+15.关闭MongoDB服务  net stop MongoDB
+
+16.移除 MongoDB 服务 C:\mongodb\bin\mongod.exe --remove
+
+17.使用 js 执行init 数据库，在安装bin的目录下执行 例： mongod D:\react\question_github\util\init.mongo.js
+    例 content：
+        var conn = new Mongo("localhost:27017");
+        var db = conn.getDB("issuetracker");
+        db.issues.remove({});
+        db.issues.insert([{},{}});
+        db.issues.createIndex({ status: 1 });
+        
+
+最新的电脑支持SSL 1.0 以上的，Mongodb 4以上的需要配置证书
+TODO:
+I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'   --error 

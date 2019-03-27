@@ -1,0 +1,7 @@
+1. cnpm  i -g eslint
+
+2. cnpm i eslint-plugin-jsx-a11y@latest --save-dev -g
+
+3. cnpm i eslint-plugin-react@latest --save-dev -g
+
+4. cnpm i eslint-plugin-import@latest --save-dev -g
